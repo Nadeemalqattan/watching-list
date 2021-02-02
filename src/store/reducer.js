@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
       state.movies.length === 0
         ? (newMovie.id = 1)
         : (newMovie.id = state.movies[state.movies.length - 1].id + 1);
-      newMovie.list = "watchlist";
+      newMovie.list = "watch";
       return {
         ...state,
         movies: [...state.movies, newMovie],

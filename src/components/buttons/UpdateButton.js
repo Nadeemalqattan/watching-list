@@ -7,11 +7,10 @@ const UpdateButton = ({ movie }) => {
   const _movie = {
     id: movie.id,
     name: movie.name,
-    list: movie.list === "watchlist" ? "watched" : "watchlist",
+    list: movie.list === "watch" ? "watched" : "watch",
   };
 
-  const buttonView = () =>
-    movie.list === "watchlist" ? "watched" : "unwatched";
+  const buttonView = () => (movie.list === "watch" ? "watched" : "unwatched");
 
   return (
     <button

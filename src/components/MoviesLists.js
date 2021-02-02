@@ -1,24 +1,17 @@
 import { useSelector } from "react-redux";
-import movies from "../movies";
-import Movie from "./Movie";
+import MovieList from "./MovieList";
 
 const MoviesLists = () => {
   const allMovies = useSelector((state) => state.movies);
-  const watchlist = allMovies
-    .filter((movie) => movie.list === "watchlist")
-    .map((movie) => {
-      return <Movie className="list-group-item" key={movie.id} movie={movie} />;
-    });
-  const watchedlist = allMovies
-    .filter((movie) => movie.list === "watched")
-    .map((movie) => {
-      return <Movie className="list-group-item" key={movie.id} movie={movie} />;
-    });
+
+  const watchlist = allMovies.filter((movie) => movie.list === "watch");
+
+  const watchedlist = allMovies.filter((movie) => movie.list === "watched");
 
   return (
     <>
-      <ul>{watchlist}</ul>
-      <ul>{watchedlist}</ul>
+      <MovieList list={watchlist} />
+      <MovieList list={watchedlist} />
     </>
   );
 };

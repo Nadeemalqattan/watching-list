@@ -1,11 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Watchlist from "./components/Watchlist";
+import AddMovie from "./components/AddMovie";
+import MoviesLists from "./components/MoviesLists";
 
 function App() {
   return (
     <div className="App">
-      <Watchlist />
+      <AddMovie />
+      <MoviesLists />
     </div>
   );
 }

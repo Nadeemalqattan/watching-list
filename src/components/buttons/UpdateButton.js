@@ -10,13 +10,16 @@ const UpdateButton = ({ movie }) => {
     list: movie.list === "watchlist" ? "watched" : "watchlist",
   };
 
+  const buttonView = () =>
+    movie.list === "watchlist" ? "watched" : "unwatched";
+
   return (
     <button
       type="button"
       className="btn btn-primary"
       onClick={() => dispatch(updateMovie(_movie))}
     >
-      Watched
+      {buttonView()}
     </button>
   );
 };

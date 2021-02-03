@@ -1,15 +1,14 @@
+import { MovieWrapper } from "../styles";
 import DeleteButton from "./buttons/DeleteButton";
 import UpdateButton from "./buttons/UpdateButton";
 
 const Movie = ({ movie }) => {
   return (
-    <>
+    <MovieWrapper>
       {movie.name}
-      <span>
-        <UpdateButton movie={movie} />
-        <DeleteButton movieId={movie.id} />
-      </span>
-    </>
+      <UpdateButton movie={movie} />
+      <DeleteButton movieId={movie.id} />
+    </MovieWrapper>
   );
 };
 export default Movie;

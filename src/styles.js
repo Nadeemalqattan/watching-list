@@ -31,20 +31,34 @@ export const HomeImage = styled.img`
 //   }
 // `;
 
-export const ListWrapper = styled.div`
-  align-items: center;
-  justify-content: center;
-  display: flex-wrap;
+export const Lists = styled.div`
+  display: flex;
 `;
 
-export const MovieWrapper = styled.div`
+export const ListWrapper = styled.div`
+  display: flex-wrap;
+  flex: ${(props) => props.size};
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
   width: 40%;
   margin: 2em;
-  display: block;
 
+  button {
+    margin: 0.5em;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  h2 {
+    text-align: center;
+  }
+`;
+
+export const MovieWrapper = styled.div`
   button {
     margin: 0.5em;
   }

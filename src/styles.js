@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
 
 export const Title = styled.h1`
   text-align: center;
@@ -17,19 +17,19 @@ export const HomeImage = styled.img`
   border: 5px solid orange;
 `;
 
-export const Logo = styled(Link)`
-  img {
-    width: 70px;
-  }
-`;
+// export const Logo = styled(Link)`
+//   img {
+//     width: 70px;
+//   }
+// `;
 
-export const NavItem = styled(NavLink)`
-  color: black;
-  &.active {
-    color: orange;
-    font-weight: bold;
-  }
-`;
+// export const NavItem = styled(NavLink)`
+//   color: black;
+//   &.active {
+//     color: orange;
+//     font-weight: bold;
+//   }
+// `;
 
 export const ListWrapper = styled.div`
   align-items: center;
@@ -37,19 +37,25 @@ export const ListWrapper = styled.div`
   display: flex-wrap;
 `;
 
-export const TripWrapper = styled.div`
-  margin: 20px;
-  display: inline-block;
-  border: solid 2px black;
-  display-flex = flex;
-  
+export const MovieWrapper = styled.div`
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  width: 40%;
+  margin: 2em;
+  display: block;
+
+  button {
+    margin: 0.5em;
+  }
+
   img {
     height: 200px;
     border: 5px solid white;
   }
 
   p {
-    text-align: center;
+    text-align: left;
   }
 `;
 

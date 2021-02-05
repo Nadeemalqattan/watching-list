@@ -1,42 +1,42 @@
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { MovieWrapper } from "../styles";
 import MovieList from "./MovieList";
-import { ListWrapper, Lists } from "../styles";
+import SearchBar from "./SearchBar";
 
 const MoviesLists = () => {
+  const [query, setQuery] = useState("");
+  const [_query, _setQuery] = useState("");
+
   const allMovies = useSelector((state) => state.movies);
 
-  const watchlist = allMovies.filter((movie) => movie.list === "watch");
-  const movieWatch = watchlist.length;
+  const watchlist = allMovies.filter(
+    (movie) =>
+      movie.list === "watch" &&
+      movie.name.toLowerCase().includes(query.toLowerCase())
+  );
 
-  const watchedlist = allMovies.filter((movie) => movie.list === "watched");
-  const movieWatched = watchedlist.length;
+  const watchedlist = allMovies.filter(
+    (movie) =>
+      movie.list === "watched" &&
+      movie.name.toLowerCase().includes(_query.toLowerCase())
+  );
+
   return (
     <>
       <MovieWrapper>
-        <h2>{`Watchlist (${movieWatch})`}</h2>
-
+        <SearchBar setQuery={setQuery} />
+        <h3>{`Watchlist - ${watchlist.length}`}</h3>
         <hr />
         <MovieList list={watchlist} />
       </MovieWrapper>
       <MovieWrapper>
-        <h2>{`Watched (${movieWatched})`}</h2>
-
+        <SearchBar setQuery={_setQuery} />
+        <h3>{`Watched - ${watchedlist.length}`}</h3>
         <hr />
         <MovieList list={watchedlist} />
       </MovieWrapper>
     </>
-    <div>
-      <Lists>
-        <ListWrapper size={1}>
-          <h2>Watch List</h2>
-          <MovieList list={watchlist} />
-        </ListWrapper>
-        <ListWrapper size={1}>
-          <h2>Watched</h2>
-          <MovieList list={watchedlist} />
-        </ListWrapper>
-      </Lists>
-    </div>
   );
 };
 

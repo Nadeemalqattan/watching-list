@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BsPlusCircle } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { addMovie } from "../store/actions";
-import { SearchBarStyled } from "../styles";
+import { AddBarStyled } from "../styles";
 
 const AddMovie = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const AddMovie = () => {
   };
 
   return (
-    <SearchBarStyled onSubmit={handleSubmit}>
+    <AddBarStyled onSubmit={handleSubmit}>
       <div className="input-group mb-3">
         <input
           type="text"
@@ -40,7 +40,7 @@ const AddMovie = () => {
           </button>
         </div>
       </div>
-    </SearchBarStyled>
+    </AddBarStyled>
   );
 };
 

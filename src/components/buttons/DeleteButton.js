@@ -3,6 +3,7 @@ import { deleteMovie } from "../../store/actions";
 
 const DeleteButton = ({ movieId }) => {
   const dispatch = useDispatch();
+
   return (
     <button
       type="button"

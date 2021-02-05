@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
-import { MovieWrapper } from "../styles";
+import { ListWrapper, Lists } from "../styles";
 
 const MoviesLists = () => {
   const allMovies = useSelector((state) => state.movies);
@@ -25,6 +25,18 @@ const MoviesLists = () => {
         <MovieList list={watchedlist} />
       </MovieWrapper>
     </>
+    <div>
+      <Lists>
+        <ListWrapper size={1}>
+          <h2>Watch List</h2>
+          <MovieList list={watchlist} />
+        </ListWrapper>
+        <ListWrapper size={1}>
+          <h2>Watched</h2>
+          <MovieList list={watchedlist} />
+        </ListWrapper>
+      </Lists>
+    </div>
   );
 };
 

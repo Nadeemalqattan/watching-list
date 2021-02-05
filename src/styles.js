@@ -2,9 +2,21 @@ import styled from "styled-components";
 // import { Link, NavLink } from "react-router-dom";
 
 export const Title = styled.h1`
-  text-align: center;
-`;
+  text-align: center:
 
+`;
+export const MovieName = styled.div`
+  float: left;
+  font-size: 25px;
+  padding: 0.2em;
+`;
+export const MovieButtons = styled.div`
+  float: right;
+  margin: 0;
+`;
+export const MovieHeight = styled.div`
+  height: 60px;
+`;
 export const Description = styled.h4`
   text-align: center;
 `;
@@ -41,8 +53,9 @@ export const MovieWrapper = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
-  width: 40%;
-  margin: 2em;
+  width: 90%;
+  margin: 2em auto;
+  padiing: 2em;
   display: block;
 
   button {
@@ -75,11 +88,10 @@ export const DetailWrapper = styled.div`
   }
 `;
 
-export const SearchBarStyled = styled.input`
-  padding: 0.5rem;
-  margin: 1rem auto;
+export const SearchBarStyled = styled.form`
+  margin: 1em auto;
   display: block;
-  width: 40%;
+  width: 90%;
 `;
 
 export const RangeBarStyled = styled.input`
@@ -92,10 +104,9 @@ export const RangeBarStyled = styled.input`
 
 export const Buttons = styled.div`
   display: inline-flex;
-  margin-bottom: 20px;
 
   button {
-    margin-left: 20px;
+    margin-left: 10px;
   }
 `;
 
